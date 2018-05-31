@@ -1,0 +1,177 @@
+/* your styles go here */
+
+
+ul.nav-menu.list-unstyled.d-flex.flex-md-row.align-items-md-center.navbar-right li {
+    /* font-size: unset; */
+    display: inline-block;
+    margin: 6px 15px;
+}
+
+
+
+.btn-theme {
+    padding: 5px 15px;
+    font-size: 16px;
+}
+
+.card-block {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+.card {
+    height: 100%;
+    border: none;
+    background: #fff;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    border-radius: 0;
+}
+
+.card-header:first-child {
+    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+}
+
+
+.align-items-center {
+    -webkit-box-align: center!important;
+    -webkit-align-items: center!important;
+    -ms-flex-align: center!important;
+    align-items: center!important;
+}
+
+.d-flex {
+    display: -webkit-box!important;
+    display: -webkit-flex!important;
+    display: -ms-flexbox!important;
+    display: flex!important;
+}
+
+.card-header {
+      height: 60px;
+      padding: 30px 20px 40px 20px;
+      margin-bottom: 0;
+      background-color: #f7f7f9;
+      border-bottom: 1px solid rgba(0,0,0,.125);
+}
+.card-header h2, .card-header h3 {
+    margin-bottom: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+.breadcrumb {
+    background-color: #e6e9ec!important;
+}
+.breadcrumb-holder {
+    background-color: #e6e9ec!important;
+}
+nav.side-navbar .sidenav-header {
+    background: #292929;
+    padding: 14px;
+    margin-bottom: 10px;
+}
+nav.side-navbar .sidenav-header img {
+    width: 50px;
+    height: 50px;
+}
+
+.rounded-circle {
+    border-radius: 30%;
+}
+
+.text-center {
+    text-align: center!important;
+}
+.sidenav-header-inner.text-center {
+    margin: auto;
+}
+nav.side-navbar .sidenav-header h2 {
+    margin: 10px 0 0;
+    font-size: 18px;
+}
+
+
+
+/* Table tr hover color */
+.table_hover_tr>tbody>tr:hover {
+    background: #e0e6ff;
+}
+
+
+#upload-msg{
+    margin: -15px 10px 14px 15px;
+    padding: 0px;
+    font-size: 16px;
+}
+
+
+form.form-inline{
+  display: inline-block;
+  float: left;
+}
+
+
+.btn-approve{
+  margin-left: 4px;
+}
+
+.mtm{
+  margin-top: -10px;
+}
+
+
+#exportcustmer_dwlink{
+  margin-right: 25px;
+  margin-top: 4px;
+}
+
+
+#loading_login {
+  width: 100%;
+  height: 100%;
+  top: -75px;
+  left: -50px;
+  position: fixed;
+  display: block;
+  opacity: 0.7;
+  background-color: #fff;
+  z-index: 99;
+  text-align: center;
+}
+#loading {
+  width: 100%;
+  height: 100%;
+  top: -20px;
+  left: 0px;
+  position: fixed;
+  display: block;
+  opacity: 0.7;
+  background-color: #fff;
+  z-index: 99;
+  text-align: center;
+}
+
+#loading-image {
+  width: 80px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+}
+
+#loading-text {
+  width: 100%;
+  position: absolute;
+  top: 60%;
+  left: 10%;
+  z-index: 100;
+}
+
+
+
+#sign_region_label{
+  font-size: 14px;
+  font-weight: 300;
+  color: #aaa;
+}

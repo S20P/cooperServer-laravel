@@ -1,0 +1,68 @@
+
+   "exportCustomer" =>[
+                         {
+                          "code": 200,
+                          "status": "success",
+                          "message": "There is no any calllog with this condition"
+                         }
+                      ]
+
+
+   "resetPassword"=>[
+                     {
+                         "status": "success",
+                        "message": "Password changed successfully!"
+                     }
+                    ]
+
+
+   "forgotPassword"=>[
+                      {
+                      "code": 111,
+                      "status": "success",
+                      "message": "OTP send successfully"
+                       }
+                     ]
+
+
+  "resetPasswordOTP"=>[
+                       {
+                        "code": 101,
+                        "status": "error",
+                        "message": "OTP code not match"
+                       }
+                      ]
+
+
+  "deleteUser"=>[
+                 {
+                    "code": 101,
+                    "status": "error",
+                    "message": "Can not delete to admin"
+                  }
+               ]
+
+
+   "getAlluser" =>[ {   "status": "success",
+                        "message": "User get succssfull",
+                        "data": [
+                                    {
+                                        "_id": "5a657ba2b2dacc00147401d4",
+                                        "isAdmin": true,
+                                        "flag": "active",
+                                        "status": "approved",
+                                        "region": "Northern Ontario",
+                                        "phone": "7474747477",
+                                        "email": "admin@gmail.com",
+                                        "__v": 0
+                                    },
+                                 ]
+                     }
+                 ]
+
+
+
+
+"list" =>[{
+  
+  }]

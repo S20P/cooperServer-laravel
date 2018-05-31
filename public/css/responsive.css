@@ -1,0 +1,122 @@
+/* Portrait tablets and medium desktops */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  body {
+    font-size: 15px;
+  }
+  .project-item:hover .project-content {
+    bottom: 60px;
+  }
+  .project-content {
+    left: 30%;
+  }
+
+
+}
+
+/* Portrait tablets and small desktops */
+
+@media (max-width: 991px) {
+  html {
+    font-size: 90%;
+  }
+  .home-content h1 {
+    font-size: 40px;
+    line-height: 50px;
+  }
+}
+
+/* Portrait tablets and small desktops */
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 90%;
+  }
+  .home-content h1 {
+    font-size: 40px;
+    line-height: 60px;
+  }
+}
+
+/* Landscape phones and portrait tablets */
+
+@media (max-width: 767px) {
+  html {
+    font-size: 80%;
+  }
+  .project-item img {
+    width: 100%;
+  }
+  .project-item:hover .project-content {
+    bottom: 200px;
+  }
+  .project-content {
+    left: 42%;
+  }
+  .project-content {
+    cursor: zoom-in;
+  }
+
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+    color: #000;
+}
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>a:focus, .navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover {
+    color: #000;
+    background-color: transparent;
+}
+}
+@media (min-width: 567px) and (max-width: 667px) {
+  .project-item:hover .project-content {
+    bottom: 150px;
+  }
+  .project-content {
+    left: 40%;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 567px) {
+  .project-item:hover .project-content {
+    bottom: 120px;
+  }
+  .project-content {
+    left: 37%;
+  }
+}
+
+/* Landscape phones and smaller */
+
+@media (min-width: 420px) and (max-width: 480px) {
+  .project-item:hover .project-content {
+    bottom: 110px;
+  }
+  .project-content {
+    left: 37%;
+  }
+}
+
+@media (min-width: 360px) and (max-width: 420px) {
+  .project-item:hover .project-content {
+    bottom: 85px;
+  }
+  .project-content {
+    left: 35%;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 360px) {
+  .project-item:hover .project-content {
+    bottom: 60px;
+  }
+  .project-content {
+    left: 32%;
+  }
+}
+
+@media (max-width: 320px) {
+  .project-item:hover .project-content {
+    bottom: 50px;
+  }
+  .project-content {
+    left: 30%;
+  }
+}
