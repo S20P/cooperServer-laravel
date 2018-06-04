@@ -74,7 +74,6 @@ Route::get('/', function () {
            //Reject User
                Route::post('/User_reject', 'APIController@User_reject_action')->name('admin.User_reject_api');
 
-
            //File_Upload
                Route::get('/file_upload', 'APIController@show_file_upload_form')->name('admin.fileupload_form');
                Route::post('/file_upload_call', 'APIController@file_upload_action')->name('admin.fileupload_api');
@@ -91,6 +90,12 @@ Route::get('/', function () {
                Route::get('/changePassword','APIController@showChangePasswordForm')->name('admin.changePassword_form');
                Route::post('/changePassword','APIController@changePassword')->name('admin.changePassword');
 
+            //Admin crossemail
+            Route::get('/settingEmail','APIController@show_settingEmail_page')->name('admin.settingEmail_page');
+            Route::post('/settingEmail/add', 'APIController@add_settingEmail')->name('admin.add_settingEmail');
+            Route::post('/settingEmail/update', 'APIController@update_settingEmail')->name('admin.update_settingEmail');
+            Route::post('/settingEmail/delete', 'APIController@delete_settingEmail')->name('admin.delete_settingEmail');
+   
           //test
              Route::get('/test','APIController@test');
 

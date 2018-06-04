@@ -69,7 +69,13 @@ $(document).ready(function () {
             registerPassword: 'please enter your password'
         }
     });
-
+    $('#addemailform').validate({
+        messages: {
+            registerUsername: 'please enter your first name',
+            registerEmail: 'please enter a vaild Email Address',
+            registerPassword: 'please enter your password'
+        }
+    });
     // ------------------------------------------------------- //
     // Transition Placeholders
     // ------------------------------------------------------ //

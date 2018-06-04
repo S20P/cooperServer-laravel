@@ -42,6 +42,11 @@
           <i class="fa fa-lock" aria-hidden="true"></i><span>Change Password</span>
              </a>
           </li>
+          <li>
+             <a href="{{ route('admin.settingEmail_page') }}">
+             <i class="fa fa-cog" aria-hidden="true"></i><span>Cron Email User</span>
+             </a>
+          </li>
         </ul>
       </div>
     </div>

@@ -40,8 +40,6 @@
 
   <link rel="stylesheet" href="{{ asset('datepicker/css/bootstrap-datepicker.css') }}">
 
-
-
   <!-- Favicon-->
   <link rel="shortcut icon" href="favicon.png">
   <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
@@ -106,9 +104,14 @@
       //$('#call_logs-table').tablePaginate({navigateType:'navigator',recordPerPage:10,buttonPosition:'before'});
     });
     </script>
+    <script src="{{ asset('vendor/jquery-validation/jquery.validate.min.js') }}"></script>
+    
     <!-- pagination script end-->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script> -->
     <script src="{{ asset('datepicker/js/bootstrap-datepicker.js') }}"></script>
+    <!-- jQuery library -->
+
+
     <script>
     $(document).ready(function() {
         $('#datePicker_to')
@@ -135,7 +138,9 @@ $(document).ready(function() {
 });
 
     </script>
+  
 
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
 

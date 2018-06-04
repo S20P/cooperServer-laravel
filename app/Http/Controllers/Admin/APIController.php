@@ -33,11 +33,16 @@ class APIController extends Controller
      //Use token everywhere
      if($request->session()->has('token')){
             $this->token = Session::get('token');
+
+            
      }
      else{
          return redirect('/');
      }
         //$this->token = Session::get('token');
+
+        
+        
 
       //User list API-----------------------------------------------------------
       $response = Curl::to('https://cooperapp.herokuapp.com/api/getAlluser')
@@ -55,7 +60,7 @@ class APIController extends Controller
 
         $user_data = $userdata_all->data;
         if ($user_data) {
-
+            
            View::share('user_data', $user_data);
         }
         else{
@@ -370,7 +375,10 @@ class APIController extends Controller
 
          $Approval_data =json_decode($response);
          //  print_r($Approval_data);
+
            return redirect()->back();
+
+
        ////  return;
  }
 
@@ -522,6 +530,153 @@ class APIController extends Controller
 
          }
 
+//settingEmail-------------------------------------------------------
+
+      public function show_settingEmail_page(){
+
+
+      //email list API-----------------------------------------------------------
+      $response = Curl::to('https://cooperapp.herokuapp.com/api/getallemail')
+             ->withHeader('Content-Type: application/x-www-form-urlencoded; charset=UTF-8')
+             ->withHeader('app_version: 1.0')
+             ->withHeader('api_version: 1.0')
+             ->withHeader('app_type: android')
+             ->withHeader('language: en')
+             ->withHeader("token:$this->token")
+             ->get();
+
+        if($response){
+        $data =json_decode($response);
+        if ($data) {
+        $email_data = $data->data;
+
+        $message = $data->message;
+        }
+      }
+
+        return view('admin.settingEmail_page',array('email_data' =>$email_data));
+      }
+
+//Add new email --
+     public function add_settingEmail(Request $request){
+      
+        $firstname =  $request->get('firstname');
+        $lastname =  $request->get('lastname');
+        $email =  $request->get('email');
+
+        $validatedData = $request->validate([
+          'email' => 'required',
+         ]);
+
+        if($firstname==null){
+          $firstname =  " ";
+        }else{
+          $firstname =  $request->get('firstname');
+        }
+        if($lastname==null){
+          $lastname =  " ";
+        }else{
+          $lastname =  $request->get('lastname');
+        }
+        if($email==null){
+          $email =  " ";
+        }else{
+          $email =  $request->get('email');
+        }
+        
+
+          // return response()->json([
+          //           "firstname"=> $firstname,
+          //           "lastname" =>  $lastname,
+          //           "email"=>$email
+          //         ]);
+       
+
+     $response = Curl::to('https://cooperapp.herokuapp.com/api/createemail')
+           ->withData( array( 'firstname' => $firstname,'lastname' => $lastname ,'email'=>$email,'_id'=>'0') )
+           ->withHeader('Content-Type: application/x-www-form-urlencoded; charset=UTF-8')
+           ->withHeader('app_version: 1.0')
+           ->withHeader('api_version: 1.0')
+           ->withHeader('app_type: android')
+           ->withHeader('language: en')
+           ->withHeader("token:$this->token")
+           ->post();
+
+      $data_all =json_decode($response);
+
+
+      if($data_all){
+     
+        if($data_all->status=="success"){
+           return redirect()->back()->with("success",$data_all->message);
+        }
+        if($data_all->status=="error"){
+           return redirect()->back()->with("error",$data_all->message);
+        }
+   }
+   else{
+     return redirect()->back()->with("error","Somthing Wrong!");
+   }
+
+    }
+
+   //Update new email --
+     public function update_settingEmail(Request $request){
+         $_id = $request->_id;
+        $firstname =  $request->get('firstname');
+        $lastname =  $request->get('lastname');
+        $email =  $request->get('email_edit');
+
+        $validatedData = $request->validate([
+            'email_edit' => 'required',
+        ]);
+
+     $response = Curl::to('https://cooperapp.herokuapp.com/api/createemail')
+           ->withData( array( 'firstname' => $firstname,'lastname' => $lastname ,'email'=>$email,'_id'=>$_id) )
+           ->withHeader('Content-Type: application/x-www-form-urlencoded; charset=UTF-8')
+           ->withHeader('app_version: 1.0')
+           ->withHeader('api_version: 1.0')
+           ->withHeader('app_type: android')
+           ->withHeader('language: en')
+           ->withHeader("token:$this->token")
+           ->post();
+
+      $data_all =json_decode($response);
+
+
+      if($data_all){
+        if($data_all->status=="success"){
+           return redirect()->back()->with("success",$data_all->message);
+        }
+        if($data_all->status=="error"){
+           return redirect()->back()->with("error",$data_all->message);
+        }
+   }
+   else{
+     return redirect()->back()->with("error","Somthing Wrong!");
+   }
+    }
+
+  //Delete  email --
+  
+    public function delete_settingEmail(Request $request){
+      $_id = $request->_id;
+     
+     $response = Curl::to('https://cooperapp.herokuapp.com/api/deleteemailbyid')
+             ->withData(array('_id' => $_id ) )
+             ->withHeader('Content-Type: application/x-www-form-urlencoded; charset=UTF-8')
+             ->withHeader('app_version: 1.0')
+             ->withHeader('api_version: 1.0')
+             ->withHeader('app_type: android')
+             ->withHeader('language: en')
+             ->withHeader("token:$this->token")
+             ->get();
+
+        //$Approval_data =json_decode($response);
+        //  print_r($Approval_data);
+          return redirect()->back();
+      ////  return;
+}
 
  //Logout API-----------------------------------------------------------
         public function logout(Request $request)

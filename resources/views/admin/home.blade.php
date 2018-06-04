@@ -18,7 +18,6 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
-
         <div class="card">
           <div class="card-header d-flex align-items-center">
                   <h2 class="h5 display">User Records</h2>
@@ -219,14 +218,13 @@
                    </div>
                    <!-- end Model -->
                         @endif
-
                   </td>
 
                 </tr>
                 <?php  $number++;?>
                 @endforeach
                 @else
-
+ 
             <tr>
               <td>{{$user_data}}</td>
             </tr>
